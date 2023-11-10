@@ -287,6 +287,8 @@ func addLocalDeviceVhost(conf *types.NetConf, args *skel.CmdArgs, actualSharedDi
 	var err error
 	var vhostName string
 
+	logging.Debugf("addLocalDeviceVhost: debug conf info: %v", conf)
+
 	if conf.HostConf.VhostConf.Socketfile == "" {
 		conf.HostConf.VhostConf.Socketfile = fmt.Sprintf("%s-%s", args.ContainerID[:12], args.IfName)
 	}
